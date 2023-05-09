@@ -1,3 +1,4 @@
 data/*
 train-file/*
 test-file/*
+model/*
