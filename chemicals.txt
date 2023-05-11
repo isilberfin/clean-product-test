@@ -22,10 +22,10 @@ Octinoxate
 Homosalate
 Toluene
 Talc
-PFA 
+PFA
 PFC
 Teflon
-Polytetrafluoroethylene 
+Polytetrafluoroethylene
 PTFE
 Resorcinol
 Carbon black
@@ -34,10 +34,4 @@ Butyl
 propyl
 ethyl
 Parabens
-
-
-
-
-
-
-
+Paraben
