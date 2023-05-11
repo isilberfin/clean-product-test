@@ -3,7 +3,6 @@ import subprocess
 import os
 import cv2
 
-
 def main():
     st.title("Text Recognition Application")
 
@@ -11,23 +10,20 @@ def main():
     if st.button("Capture from Video"):
         subprocess.run(["python", "capture_from_video.py"])
 
-    # Button to load from device
-    if st.button("Load from Device"):
-        uploaded_file = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
+    uploadbtn = st.button("Upload Image")
 
+    if "uploadbtn_state" not in st.session_state:
+        st.session_state.uploadbtn_state = False
+    if uploadbtn or st.session_state.uploadbtn_state:
+        st.session_state.uploadbtn_state = True
+        uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
+        print(uploaded_file)
         if uploaded_file is not None:
-            # Specify the directory to save the uploaded file
-            save_dir = "./images"
-            os.makedirs(save_dir, exist_ok=True)  # Create the directory if it doesn't exist
-
-            # Save the uploaded file to the specified directory
-            save_path = os.path.join(save_dir, uploaded_file.name)
-            with open(save_path, "wb") as f:
-                f.write(uploaded_file.read())
-
-            # Display the uploaded image
-            st.image(uploaded_file, caption='Uploaded Image')
-
+            # Save the uploaded file to the "test-img" folder
+            file_path = os.path.join("test-img", "test_img.png")
+            with open(file_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+            st.success("File uploaded successfully.")
 
 if __name__ == "__main__":
     main()
