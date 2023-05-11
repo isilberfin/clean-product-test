@@ -31,8 +31,8 @@ def take_picture():
     image = capture_image()
 
     # Save the image to a file in the "test_folder" directory
-    folder = 'test_img'
-    filename = 'test_img.jpg'
+    folder = 'test-img'
+    filename = 'test_img.png'
     save_image(image, folder, filename)
 
     # Close the camera
